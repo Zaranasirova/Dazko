@@ -1,0 +1,84 @@
+@import "mixin";
+@import "variable";
+.hero {
+  width: 100%;
+  .hero-section {
+    background-image: url("../image/bg_3.jpg.webp");
+    position: relative;
+    z-index:0 ;
+    width: 100%;
+    height: 100vh;
+    min-height: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: "";
+      z-index: -1;
+      background-color: #030513;
+      opacity: 0.7;
+    }
+    .container {
+      .hero-info {
+        display: flex;
+        flex-direction: column;
+        animation-name: example;
+        animation-duration: 2s;
+        transform: translate(0px, 210px);
+        position: relative;
+        justify-content: center;
+        .hero-info-title {
+          font-size: 60px;
+          font-weight: 700;
+          text-transform: uppercase;
+          font-style: italic;
+          color: #fff;
+          line-height: 1.1;
+          font-family: "Roboto Condensed", Arial, sans-serif;
+          @media (max-width: 768px) {
+            width: 100%;
+            font-size: 35px;
+          }
+          @media (max-width: 320px) {
+            width: 100%;
+            font-size: 30px;
+          }
+        }
+        .hero-info-text {
+          color: rgba(255, 255, 255, 0.8);
+          font-weight: 500;
+          width: 100%;
+        }
+        .button-link {
+          margin-top: 40px;
+          display: flex;
+          gap: 10px;
+          border: 1px solid $mycolor;
+          background-color: $mycolor;
+          width: 200px;
+          justify-content: center;
+          align-items: center;
+          padding: 14px 15px;
+          &:hover {
+            background-color: $hovercolor;
+            border-color: $hovercolor;
+            transition: $trasition;
+          }
+          a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 12px;
+          }
+          .icon {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@import "mixin";
+@import "variable";
+* {
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+.members {
+  background-image: linear-gradient(
+    123deg,
+    #1425af 25%,
+    #1d2cb5 25%,
+    #1d2cb5 50%,
+    #1425af 50%,
+    #1425af 75%,
+    #1d2cb5 75%,
+    #1d2cb5 100%
+  );
+  background-size: 357.71px 550.82px;
+  height: 500px;
+  margin-top: 100px;
+  .members-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    p {
+      @include mymixin;
+      display: block;
+      margin-bottom: 5px;
+    }
+    h2 {
+      font-size: 34px;
+      @include titlemixin;
+      color: #fff;
+      line-height: 1.2;
+
+      span {
+        color: $mycolor;
+      }
+    }
+  }
+}

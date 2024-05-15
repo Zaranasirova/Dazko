@@ -1,0 +1,62 @@
+@import "mixin";
+@import "variable";
+* {
+  font-family: "Open Sans", Arial, sans-serif;
+}
+.table {
+  border-spacing: 2px;
+  border-collapse: collapse;
+  font-family: "Open Sans", Arial, sans-serif;
+  margin-top: 100px;
+  .container {
+    .table-text-list {
+      p {
+        @include mymixin;
+        display: block;
+        margin-bottom: 5px;
+        padding-bottom: 20px;
+      }
+      h2 {
+        font-size: 34px;
+
+        @include titlemixin;
+        padding-bottom: 50px;
+        .tbl-mark {
+          color: $mycolor;
+          background-color: transparent;
+        }
+      }
+    }
+    .table-wrap {
+      @media (max-width: 1050px) {
+        overflow-x: scroll;
+      }
+      .table-fitness {
+        width: 100%;
+        td:nth-child(odd) {
+          background-color: #f4f6fc;
+        }
+        tr {
+          th {
+            background-color: #1425af;
+            padding: 30px;
+            font-size: 14px;
+            color: #fff;
+          }
+          .red {
+            background-color: #e1193e;
+            color: #fff;
+            font-size: 14px;
+          }
+          td {
+            padding: 30px;
+            font-size: 14px;
+            background: #fff;
+            vertical-align: middle;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@import "mixin";
+@import "variable";
+* {
+  font-family: "Roboto Condensed", Arial, sans-serif;
+}
+.video {
+  margin-top: -300px;
+  margin-bottom: 100px;
+  .container {
+    .video-slide {
+      display: flex;
+      gap: 20px;
+      
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+      .video-top {
+        background-image: url(../image/success-1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center right;
+        height: 400px;
+        width: 100%;
+        .text {
+          transform: translateY(250px);
+          @media (max-width: 320px) {
+            transform: translateY(200px);
+          }
+          h3 {
+            line-height: 1.2;
+            color: #011f39;
+            font-weight: 400;
+            font-family: "Roboto Condensed", Arial, sans-serif;
+            padding: 30px 50px;
+
+            a {
+              color: #fff;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .video-bottom {
+        background-image: url(../image/gallery-8.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        height: 400px;
+        width: 100%;
+        .text {
+          transform: translateY(250px);
+          @media (max-width: 320px) {
+            transform: translateY(200px);
+          }
+          h3 {
+            line-height: 1.2;
+            color: #011f39;
+            font-weight: 400;
+            font-family: "Roboto Condensed", Arial, sans-serif;
+            padding: 30px 50px;
+            a {
+              color: #fff;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

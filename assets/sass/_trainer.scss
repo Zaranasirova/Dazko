@@ -1,0 +1,120 @@
+@import "mixin";
+@import "variable";
+*{
+  font-family:"Open Sans", Arial, sans-serif;
+}
+.trainer {
+  margin-top: 100px;
+  .trainer-text {
+    p {
+      display: block;
+      margin-bottom: 5px;
+      @include mymixin;
+      padding-bottom: 20px;
+    }
+    h2 {
+      font-size: 34px;
+      @include titlemixin;
+      padding-bottom: 50px;
+      .tbl-mark {
+        color: $mycolor;
+        background-color: transparent;
+      }
+    }
+  }
+  .fitness-trainer {
+    background-image: url("../image/bg_5.jpg");
+    @media (max-width: 990px) {
+      background-image: none;
+    }
+    .container {
+      .trainer-slide {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        flex-wrap: wrap;
+        height: 100%;
+        padding:0  20px;
+        .trainer-image-wrap {
+          flex: 1;
+          position: relative;
+          z-index: 0;
+          @media (max-width: 990px) {
+            flex: 1 45%;
+          }
+
+          &:hover {
+            .trainer-img-text {
+              opacity: 1;
+            }
+            img {
+              position: absolute;
+              right: 80px;
+            }
+          }
+          img {
+            width: 100%;
+            height: auto;
+          }
+          .trainer-img-text {
+            background-color: #1425af;
+            display: inline-block;
+            padding: 10px 20px;
+            width: 80%;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            z-index: -1;
+            transform: translateX(10%);
+            opacity: 0;
+            transition: all 0.3s ease;
+
+            @media (max-width: 768px) {
+              opacity: 1;
+              z-index: 1;
+              text-align: left;
+              top: 100%;
+              right: 20px;
+              width: 70%;
+              -webkit-transform: translateY(-100%);
+              -ms-transform: translateY(-100%);
+              transform: translateY(-100%);
+            }
+            &::after {
+              position: absolute;
+              top: 7px;
+              left: 7px;
+              right: 7px;
+              bottom: 7px;
+              content: "";
+              border: 1px dashed rgba(255, 255, 255, 0.6);
+              z-index: -1;
+            }
+            h3 {
+              text-align: right;
+              font-size: 20px;
+              margin-bottom: 0;
+              text-transform: uppercase;
+              font-weight: 700;
+              font-style: italic;
+              color: #fff;
+              &::before {
+                z-index: -1;
+                position: absolute;
+                top: 0;
+                right: -14px;
+                bottom: 0;
+                content: "";
+                width: 50px;
+                -ms-transform: skew(-15deg);
+                -webkit-transform: skew(-15deg);
+                transform: skew(-15deg);
+                background: #1425af;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
